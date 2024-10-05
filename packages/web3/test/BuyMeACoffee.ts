@@ -11,7 +11,7 @@ async function printBalances(addresses: any[]) {
   let idx = 0;
   for (const address of addresses) {
     console.log(`Address ${idx} balance: `, await getBalance(address));
-    idx ++;
+    idx++;
   }
 }
 
@@ -44,7 +44,7 @@ async function main() {
   await printBalances(addresses);
 
   // Buy the owner a few coffees.
-  const tip = {value: hre.ethers.parseEther("1")};
+  const tip = { value: hre.ethers.parseEther("1") };
   await buyMeACoffee.connect(tipper).buyCoffee("Carolina", "You're the best!", tip);
   await buyMeACoffee.connect(tipper2).buyCoffee("Vitto", "Amazing teacher", tip);
   await buyMeACoffee.connect(tipper3).buyCoffee("Kay", "I love my Proof of Knowledge", tip);
