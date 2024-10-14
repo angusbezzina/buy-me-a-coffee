@@ -1,6 +1,20 @@
 {
-  "name": "hardhat-project",
+  "name": "@repo/web3",
+  "scripts": {
+    "test": "npx hardhat test",
+    "compile": "npx hardhat compile",
+    "node": "npx hardhat node",
+    "verify:sepolia": "npx hardhat verify --network sepolia",
+    "verify": "npx hardhat verify --network mainnet",
+    "deploy:sepolia": "npx hardhat ignition deploy ./ignition/modules/BuyMeACoffee.ts --network sepolia",
+    "deploy": "npx hardhat ignition deploy ./ignition/modules/BuyMeACoffee.ts --network mainnet"
+  },
+  "exports": {
+    "./client": "./client/client.ts"
+  },
   "devDependencies": {
+    "@repo/constants": "*",
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
     "@nomicfoundation/hardhat-toolbox-viem": "^3.0.0",
     "@nomicfoundation/hardhat-viem": "^2.0.5",
     "@types/chai": "^4.3.20",
@@ -12,6 +26,6 @@
     "typescript": "^5.0.4"
   },
   "dependencies": {
-    "@nomicfoundation/hardhat-toolbox": "^5.0.0"
+    "ethers": "^6.13.3"
   }
 }
