@@ -1,14 +1,14 @@
 ---
 import '@/styles/globals.css'
 
-import { Button } from "@repo/ui/button.tsx"
+import { BuyMeACoffeeForm } from "@/components/react/BuyMeACoffeeForm.tsx";
 
 import Layout from '@layouts/Layout.astro';
 ---
 
 <Layout title="Welcome to Astro.">
 	<main>
-		<Button>Hello World</Button>
+		<BuyMeACoffeeForm client:load />
 	</main>
 </Layout>
 
