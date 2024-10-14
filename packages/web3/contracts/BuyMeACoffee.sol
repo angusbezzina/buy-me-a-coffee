@@ -50,9 +50,9 @@ contract BuyMeACoffee {
      */
     function buyCoffee(string memory _name, string memory _message) public payable {
         // Must accept more than 0 ETH for a coffee.
-        require(msg.value > 0, "Can't buy coffee for free!");
+        require(msg.value > 0, "can't buy coffee for free!");
 
-        // Add the memo to storage
+        // Add the memo to storage!
         memos.push(Memo(
             msg.sender,
             block.timestamp,

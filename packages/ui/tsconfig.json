@@ -3,13 +3,8 @@
   "compilerOptions": {
     "outDir": "dist",
     "rootDir": ".",
-    "jsx": "react-jsx",
-    "resolveJsonModule": true,
-    "allowJs": true,
-    "esModuleInterop": true,
+    "jsx": "react",
     "allowImportingTsExtensions": true,
-    "module": "ESNext",
-    "moduleResolution": "Bundler",
     "noEmit": true,
     "baseUrl": ".",
     "paths": {

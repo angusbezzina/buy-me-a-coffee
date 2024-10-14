@@ -2,14 +2,11 @@
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
     "jsx": "react-jsx",
-    "module": "ESNext",
-    "moduleResolution": "Bundler",
     "jsxImportSource": "react",
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],
-      "@layouts/*": ["./src/layouts/*"],
-      "@repo/ui/*": ["../../packages/ui/src/*"]
+      "@layouts/*": ["./src/layouts/*"]
     }
   }
 }
