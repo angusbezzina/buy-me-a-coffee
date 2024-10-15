@@ -15,7 +15,7 @@
     "@astrojs/tailwind": "^5.1.1",
     "@repo/ui": "*",
     "@repo/types": "*",
-    "@repo/web3": "*",
+    "@repo/web3client": "*",
     "@types/react": "^18.3.11",
     "@types/react-dom": "^18.3.0",
     "astro": "^4.15.11",

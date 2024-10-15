@@ -17,12 +17,24 @@ npm install
 To compile the contract, run the command:
 
 ```bash
+npm run compile
+```
+
+OR
+
+```bash
 npx hardhat compile
 ```
 
 #### Test the contracts
 
 To test the contracts, run the command:
+
+```bash
+npm run test
+```
+
+OR
 
 ```bash
 npx hardhat test
@@ -53,6 +65,12 @@ npx hardhat verify --network <network-name> <contract-address>
 ## Connecting a wallet or Dapp to the Hardhat network
 
 To connect a wallet or Dapp to a local instance of the (Hardhat network)[https://hardhat.org/hardhat-runner/docs/getting-started#connecting-a-wallet-or-dapp-to-hardhat-network], you can use the following command:
+
+```bash
+npm run node
+```
+
+OR
 
 ```bash
 npx hardhat node

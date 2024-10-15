@@ -9,7 +9,8 @@
     "paths": {
       "@/*": ["./src/*"],
       "@layouts/*": ["./src/layouts/*"],
-      "@repo/ui/*": ["../../packages/ui/src/*"]
+      "@repo/ui/*": ["../../packages/ui/src/*"],
+      "@react/*": ["./src/components/react/*"]
     }
   }
 }

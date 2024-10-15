@@ -1,15 +1,19 @@
 ---
-import '@/styles/globals.css'
-
-import { BuyMeACoffeeForm } from "@/components/react/BuyMeACoffeeForm.tsx";
+import '@repo/styles/globals.css'
 
 import Layout from '@layouts/Layout.astro';
+
+import { BuyMeACoffeeForm } from "@react/buy-me-a-coffee-form";
+import { Page } from "@react/page";
+
+const title = "Buy me a coffee!";
 ---
 
-<Layout title="Welcome to Astro.">
-	<main>
-		<BuyMeACoffeeForm client:load />
+<Layout title={title}>
+	<main class="w-full h-full flex flex-col min-h-screen items-center justify-center">
+		<Page>
+			<h1>{title}</h1>
+			<BuyMeACoffeeForm client:load />
+		</Page>
 	</main>
 </Layout>
-
-<!-- NOTE: You can add any additional styles here wrapped in a <style /> tag -->
