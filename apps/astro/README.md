@@ -1,54 +1,17 @@
-# Astro Starter Kit: Basics
+# Astro App
 
-```sh
-npm create astro@latest -- --template basics
-```
+The face of the "Buy Me A Coffee" dApp.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## Project Structure
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+React components are located in the `src/components` directory, layout components are located in the `src/layouts` directory, and pages are located in the `src/pages` directory.
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+## Web 3 Integration
 
-## 🚀 Project Structure
+This project leverages several tools and libraries to provide a robust and seamless Web3 experience:
 
-Inside of your Astro project, you'll see the following folders and files:
+- Wagmi & TanStack Query: Wagmi exposes Web3 methods via a series of React hooks, while TanStack Query simplifies fetching, caching, synchronizing, and updating server state in web applications.
+- Viem: A TypeScript-based interface for interacting with Ethereum and other EVM-compatible blockchains, ensuring a type-safe and developer-friendly experience.
+- RainbowKit: Provides a polished wallet connection UI/UX, making it easier for users to connect their wallets and interact with the dApp. The RainbowKit docs are also a good place to start for an idea on how the client side stuff is handled.
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+**Note:** Web3 functionality is handled entirely within the web3 package, isolating blockchain-specific logic from the rest of the application.

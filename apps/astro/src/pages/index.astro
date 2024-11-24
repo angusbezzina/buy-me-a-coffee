@@ -3,17 +3,14 @@ import '@repo/styles/globals.css'
 
 import Layout from '@layouts/Layout.astro';
 
-import { BuyMeACoffeeForm } from "@react/buy-me-a-coffee-form";
-import { Page } from "@react/page";
+import { BuyMeACoffeePage } from "@react/page-buy-me-a-coffee";
 
-const title = "Buy me a coffee!";
+const metaTitle = "Angus Bezzina | Buy me a coffee";
+const title = "Show some love!";
 ---
 
-<Layout title={title}>
+<Layout title={metaTitle}>
 	<main class="w-full h-full flex flex-col min-h-screen items-center justify-center">
-		<Page>
-			<h1>{title}</h1>
-			<BuyMeACoffeeForm client:load />
-		</Page>
+		<BuyMeACoffeePage title={title} client:only />
 	</main>
 </Layout>

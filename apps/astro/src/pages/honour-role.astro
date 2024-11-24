@@ -1,0 +1,17 @@
+---
+import '@repo/styles/globals.css'
+
+import Layout from '@layouts/Layout.astro';
+
+import { PatronsListPage } from "@react/page-patrons-list";
+
+const metaTitle = "Angus Bezzina | Honour Role";
+const title = "The Honour Role 🫡";
+const description = "Special thanks to the people below for their support. Be warned, here lie legends!"
+---
+
+<Layout title={metaTitle}>
+	<main class="w-full h-full flex flex-col min-h-screen items-center justify-center">
+		<PatronsListPage title={title} description={description} client:only />
+	</main>
+</Layout>

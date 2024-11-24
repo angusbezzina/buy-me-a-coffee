@@ -28,7 +28,7 @@ contract BuyMeACoffee {
     address payable owner;
 
     // List of all memos received from coffee purchases.
-    Memo[] memos;
+    Memo[] public memos;
 
     constructor() {
         // Store the address of the deployer as a payable address.
