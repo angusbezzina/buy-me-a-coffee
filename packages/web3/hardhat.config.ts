@@ -5,17 +5,20 @@ import { HardhatUserConfig } from "hardhat/config";
 
 dotenv.config();
 
+console.log(process.env.MAINNET_RPC_URL);
+console.log(process.env.PRIVATE_KEY);
+
 const config: HardhatUserConfig = {
   solidity: "0.8.27",
   networks: {
     sepolia: {
       url: process.env.SEPOLIA_URL || "",
-      accounts: [`0x${process.env.SEPOLIA_PRIVATE_KEY || ""}`],
+      accounts: [process.env.PRIVATE_KEY || ""],
     },
-    // mainnet: {
-    //   url: MAINNET_RPC_URL,
-    //   accounts: [MAINNET_PRIVATE_KEY],
-    // },
+    mainnet: {
+      url: process.env.MAINNET_URL || "",
+      accounts: [process.env.PRIVATE_KEY || ""],
+    },
   },
   etherscan: {
     apiKey: process.env.ETHERSCAN_API_KEY || "",

@@ -22,10 +22,16 @@ function Header() {
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
-            <DropdownMenuItem asChild>
+            <DropdownMenuItem
+              asChild
+              className="cursor-pointer hover:bg-muted-foreground/20 transition-colors"
+            >
               <a href="/">💸 Show some love</a>
             </DropdownMenuItem>
-            <DropdownMenuItem asChild>
+            <DropdownMenuItem
+              asChild
+              className="cursor-pointer hover:bg-muted-foreground/20 transition-colors"
+            >
               <a href="/honour-role">🫡 View honours list</a>
             </DropdownMenuItem>
           </DropdownMenuContent>

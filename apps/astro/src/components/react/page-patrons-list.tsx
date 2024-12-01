@@ -48,7 +48,7 @@ function PatronsList() {
 function PatronsListPage({ title, description }: PatronListPageProps) {
   return (
     <Page>
-      <div className="w-full h-full min-h-[50vh] flex flex-col gap-4 justify-start items-center text-center px-4">
+      <div className="w-full md:max-w-3xl h-full min-h-[50vh] flex flex-col gap-4 justify-start items-center text-center px-4">
         <h1>{title}</h1>
         <h6>{description}</h6>
         <PatronsList />

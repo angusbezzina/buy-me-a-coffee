@@ -53,7 +53,7 @@ function BuyMeACoffeeForm() {
 
   return (
     <Form {...form}>
-      <form onSubmit={onSubmit} className="flex flex-col w-full gap-8">
+      <form onSubmit={onSubmit} className="flex flex-col h-full w-full gap-8">
         <div className="flex flex-col w-full gap-4">
           <FormField
             name="name"
@@ -108,7 +108,7 @@ type BuyMeACoffeePageProps = {
 function BuyMeACoffeePage({ title = "Buy me a coffee" }: BuyMeACoffeePageProps) {
   return (
     <Page>
-      <div className="h-full min-h-[50vh] w-full flex flex-col gap-4 items-center justify-start">
+      <div className="w-full md:max-w-3xl min-h-[50vh] flex flex-col gap-4 justify-start items-center px-4">
         <h1>{title}</h1>
         <BuyMeACoffeeForm />
       </div>

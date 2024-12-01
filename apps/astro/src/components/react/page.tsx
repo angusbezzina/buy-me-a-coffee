@@ -18,7 +18,7 @@ function PageImpl({ children }: { children: React.ReactNode | React.ReactNode[] 
   return (
     <>
       <Header />
-      <div className="relative w-full h-full min-h-screen md:max-w-3xl mx-auto px-4 flex flex-col justify-center items-center gap-6">
+      <div className="relative w-screen h-full min-h-screen mx-auto px-4 flex flex-col justify-center items-center gap-6">
         {children}
       </div>
     </>
