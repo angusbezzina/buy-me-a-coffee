@@ -5,9 +5,6 @@ import { HardhatUserConfig } from "hardhat/config";
 
 dotenv.config();
 
-console.log(process.env.MAINNET_RPC_URL);
-console.log(process.env.PRIVATE_KEY);
-
 const config: HardhatUserConfig = {
   solidity: "0.8.27",
   networks: {
@@ -18,10 +15,17 @@ const config: HardhatUserConfig = {
     mainnet: {
       url: process.env.MAINNET_URL || "",
       accounts: [process.env.PRIVATE_KEY || ""],
+      gas: 500000, // Gas limit
     },
   },
   etherscan: {
     apiKey: process.env.ETHERSCAN_API_KEY || "",
+  },
+  gasReporter: {
+    currency: "USD",
+    enabled: process.env.REPORT_GAS ? true : false,
+    outputFile: "gas-report.txt", // Specify an output file
+    noColors: true,
   },
 };
 
