@@ -1,5 +1,6 @@
 import { Header } from "@/components/react/header";
 import { Providers } from "@/components/react/providers";
+import { OWNER_ADDRESS } from "@/utils/constants";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import React from "react";
 import { useAccount } from "wagmi";
@@ -9,7 +10,8 @@ type PageProps = {
 };
 
 function PageImpl({ children }: { children: React.ReactNode | React.ReactNode[] }) {
-  const { isConnected } = useAccount();
+  const { isConnected, address } = useAccount();
+  const isOwner = address === OWNER_ADDRESS;
 
   if (!isConnected) {
     return <ConnectButton />;
@@ -17,7 +19,7 @@ function PageImpl({ children }: { children: React.ReactNode | React.ReactNode[] 
 
   return (
     <>
-      <Header />
+      <Header isOwner={isOwner} />
       <div className="relative w-screen h-full min-h-screen mx-auto px-4 flex flex-col justify-center items-center gap-6">
         {children}
       </div>

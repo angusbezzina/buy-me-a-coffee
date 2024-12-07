@@ -1,3 +1,4 @@
+import { Loading } from "@/components/react/loading";
 import { Page } from "@/components/react/page";
 import { CONTRACT_ADDRESS } from "@/utils/constants";
 import { type BuyMeACoffeeInput, BuyMeACoffeeSchema } from "@/utils/schemas";
@@ -14,12 +15,15 @@ import {
 import { Input } from "@repo/ui/components/input";
 import { BuyMeACoffee__factory } from "@repo/web3/typechain-types";
 import { parseEther } from "viem";
-import { useWriteContract } from "wagmi";
+import { useWaitForTransactionReceipt, useWriteContract } from "wagmi";
 
 const abi = BuyMeACoffee__factory.abi;
 
 function BuyMeACoffeeForm() {
-  const { writeContract } = useWriteContract();
+  const { data: hash, writeContract } = useWriteContract();
+  const { isLoading, isSuccess } = useWaitForTransactionReceipt({
+    hash,
+  });
 
   const form = useForm<BuyMeACoffeeInput>({
     resolver: zodResolver(BuyMeACoffeeSchema),
@@ -29,7 +33,11 @@ function BuyMeACoffeeForm() {
       amount: 0.001,
     },
   });
-  const { control, handleSubmit } = form;
+  const {
+    control,
+    handleSubmit,
+    formState: { isSubmitting, isValid },
+  } = form;
 
   const onSubmit = handleSubmit(async (data) => {
     const { name, message, amount } = data;
@@ -53,7 +61,8 @@ function BuyMeACoffeeForm() {
 
   return (
     <Form {...form}>
-      <form onSubmit={onSubmit} className="flex flex-col h-full w-full gap-8">
+      <form onSubmit={onSubmit} className="relative flex flex-col h-full w-full gap-8">
+        {(isSubmitting || isLoading) && <Loading />}
         <div className="flex flex-col w-full gap-4">
           <FormField
             name="name"
@@ -95,7 +104,12 @@ function BuyMeACoffeeForm() {
             )}
           />
         </div>
-        <Button type="submit">Send it!</Button>
+        <Button type="submit" disabled={!isValid || isSubmitting}>
+          Send it!
+        </Button>
+        {isSuccess && (
+          <p className="font-bold text-lg text-center">Welcome to the club, champ 😎</p>
+        )}
       </form>
     </Form>
   );

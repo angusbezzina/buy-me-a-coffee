@@ -5,9 +5,21 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@repo/ui/components/dropdown-menu";
+import { usePathname } from "@repo/ui/hooks/usePathname";
 import { CircleDollarSign, Menu } from "lucide-react";
+import { useEffect, useState } from "react";
 
-function Header() {
+type HeaderProps = {
+  isOwner: boolean;
+};
+
+function Header({ isOwner }: HeaderProps) {
+  const [isHome, setIsHome] = useState(false);
+  const pathname = usePathname();
+  const homePage = pathname === "/";
+  const honoursPage = pathname === "/honour-role";
+  const withdrawPage = pathname === "/withdraw";
+
   return (
     <header className="z-20 fixed top-0 left-0 w-full flex justify-between items-center px-4 py-3">
       <a href="/" className="flex items-center gap-2 text-xs">
@@ -22,18 +34,30 @@ function Header() {
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
-            <DropdownMenuItem
-              asChild
-              className="cursor-pointer hover:bg-muted-foreground/20 transition-colors"
-            >
-              <a href="/">💸 Show some love</a>
-            </DropdownMenuItem>
-            <DropdownMenuItem
-              asChild
-              className="cursor-pointer hover:bg-muted-foreground/20 transition-colors"
-            >
-              <a href="/honour-role">🫡 View honours list</a>
-            </DropdownMenuItem>
+            {!homePage && (
+              <DropdownMenuItem
+                asChild
+                className="cursor-pointer hover:bg-muted-foreground/20 transition-colors"
+              >
+                <a href="/">💸 Show some love</a>
+              </DropdownMenuItem>
+            )}
+            {!honoursPage && (
+              <DropdownMenuItem
+                asChild
+                className="cursor-pointer hover:bg-muted-foreground/20 transition-colors"
+              >
+                <a href="/honour-role">🫡 View honours list</a>
+              </DropdownMenuItem>
+            )}
+            {!withdrawPage && isOwner && (
+              <DropdownMenuItem
+                asChild
+                className="cursor-pointer hover:bg-muted-foreground/20 transition-colors"
+              >
+                <a href="/withdraw">🏦 Break the bank</a>
+              </DropdownMenuItem>
+            )}
           </DropdownMenuContent>
         </DropdownMenu>
       </nav>

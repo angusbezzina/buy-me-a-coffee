@@ -1,0 +1,16 @@
+---
+import '@repo/styles/globals.css'
+
+import Layout from '@layouts/Layout.astro';
+
+import { WithdrawalPage } from '@/components/react/page-withdrawal';
+
+const metaTitle = "Angus Bezzina | Withdraw";
+const title = "Time to break the bank!";
+---
+
+<Layout title={metaTitle}>
+	<main class="w-full h-full flex flex-col min-h-screen items-center justify-center">
+		<WithdrawalPage title={title} client:only />
+	</main>
+</Layout>
