@@ -43,3 +43,13 @@ npm run build
 ## Deploy
 
 The Astro app is currently configured to be deployed to Vercel. This involves, making the repository public, creating a Vercel account, and then creating a new project. Once the project is created, you can then connect the repository to the project and deploy the app.
+
+#### Troubleshooting
+
+Deploying with Turbo can be a bit tricky, so here is a quick summary of the settings I used to get it working:
+
+- **Root Directory:** `apps/astro`
+- **Build Command:** `cd ../../ && turbo run build --filter={apps/astro}`
+- **Output Directory:** `dist`
+- **Install Command:** `npm install`
+- **Development Command:** `cd ../../ && turbo run dev --filter={apps/astro}`
