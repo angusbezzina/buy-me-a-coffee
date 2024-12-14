@@ -10,7 +10,7 @@
     "deploy": "npx hardhat ignition deploy ./ignition/modules/BuyMeACoffee.ts --network mainnet"
   },
   "exports": {
-    ".": "./typechain-types"
+    ".": "./typechain-types/index.ts"
   },
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox-viem": "^3.0.0",

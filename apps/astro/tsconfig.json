@@ -10,6 +10,7 @@
       "@/*": ["./src/*"],
       "@layouts/*": ["./src/layouts/*"],
       "@repo/ui/*": ["../../packages/ui/src/*"],
+      "@repo/web3/*": ["../../packages/web3/typechain-types/*"],
       "@react/*": ["./src/components/react/*"]
     }
   }
