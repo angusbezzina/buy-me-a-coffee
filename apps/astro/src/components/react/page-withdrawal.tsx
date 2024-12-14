@@ -1,7 +1,7 @@
 import { Page } from "@/components/react/page";
 import { CONTRACT_ADDRESS } from "@/utils/constants";
 import { Button } from "@repo/ui/components/button";
-import { BuyMeACoffee__factory } from "@repo/web3/typechain-types";
+import { BuyMeACoffee__factory } from "@repo/web3";
 import { useWriteContract } from "wagmi";
 
 type WithdrawalPageProps = {

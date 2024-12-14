@@ -13,7 +13,7 @@ import {
   zodResolver,
 } from "@repo/ui/components/form";
 import { Input } from "@repo/ui/components/input";
-import { BuyMeACoffee__factory } from "@repo/web3/typechain-types";
+import { BuyMeACoffee__factory } from "@repo/web3";
 import { parseEther } from "viem";
 import { useWaitForTransactionReceipt, useWriteContract } from "wagmi";
 

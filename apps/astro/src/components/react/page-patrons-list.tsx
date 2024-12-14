@@ -1,7 +1,7 @@
 import { Page } from "@/components/react/page";
 import { CONTRACT_ADDRESS } from "@/utils/constants";
 import { useGif } from "@/utils/hooks/useGif";
-import { type BuyMeACoffee, BuyMeACoffee__factory } from "@repo/web3/typechain-types";
+import { type BuyMeACoffee, BuyMeACoffee__factory } from "@repo/web3";
 import { useReadContract } from "wagmi";
 
 type PatronListPageProps = {
