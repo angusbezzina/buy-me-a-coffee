@@ -13,4 +13,4 @@ export const ACTIVE_CHAIN = IS_PROD ? mainnet : sepolia;
 export const CONTRACT_ADDRESS = IS_PROD ? MAINNET_CONTRACT_ADDRESS : SEPOLIA_CONTRACT_ADDRESS;
 export const GIPHY_API_KEY = import.meta.env.PUBLIC_GIPHY_API_KEY || "";
 export const GIPHY_RANDOM_GIF_URL = `https://api.giphy.com/v1/gifs/random?api_key=${GIPHY_API_KEY}`;
-// export const GIPHY_GIF_BY_ID_URL = `https://api.giphy.com/v1/gifs/random?api_key=${GIPHY_API_KEY}`;
+export const GIPHY_GIF_BY_ID_URL = `https://api.giphy.com/v1/gifs/[id]?api_key=${GIPHY_API_KEY}`;

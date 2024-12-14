@@ -1,5 +1,6 @@
 import { Page } from "@/components/react/page";
 import { CONTRACT_ADDRESS } from "@/utils/constants";
+import { useGif } from "@/utils/hooks/useGif";
 import { type BuyMeACoffee, BuyMeACoffee__factory } from "@repo/web3/typechain-types";
 import { useReadContract } from "wagmi";
 
@@ -9,6 +10,31 @@ type PatronListPageProps = {
 };
 
 const abi = BuyMeACoffee__factory.abi;
+
+function PatronCard({ memo }: { memo: BuyMeACoffee.MemoStructOutput }) {
+  const formattedTimestamp = new Date(Number(memo.timestamp) * 1000).toLocaleString();
+  const { gif } = useGif();
+
+  return (
+    <div
+      key={`${memo.timestamp}-${memo.from}`}
+      className="w-full flex gap-6 rounded-lg border shadow-sm p-4"
+    >
+      <div className="h-20 w-20 rounded-md bg-foreground/80 overflow-hidden">
+        {gif && <img src={gif} alt="Memo Gif" className="w-full h-full object-cover" />}
+      </div>
+      <div className="flex flex-col justify-start items-start gap-2 text-left">
+        <i className="text-sm">{formattedTimestamp}</i>
+        <div className="flex flex-col gap-0">
+          <h6>
+            {memo.name} ({memo.from})
+          </h6>
+          <p>{memo.message}</p>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 function PatronsList() {
   const result = useReadContract({
@@ -20,27 +46,9 @@ function PatronsList() {
 
   return (
     <>
-      {memos.map((memo) => {
-        const formattedTimestamp = new Date(Number(memo.timestamp) * 1000).toLocaleString();
-
-        return (
-          <div
-            key={`${memo.timestamp}-${memo.from}`}
-            className="w-full flex gap-6 rounded-lg border shadow-sm p-4"
-          >
-            <div className="h-20 w-20 rounded-md bg-foreground/80" />
-            <div className="flex flex-col justify-start items-start gap-2 text-left">
-              <i className="text-sm">{formattedTimestamp}</i>
-              <div className="flex flex-col gap-0">
-                <h6>
-                  {memo.name} ({memo.from})
-                </h6>
-                <p>{memo.message}</p>
-              </div>
-            </div>
-          </div>
-        );
-      })}
+      {memos.map((memo) => (
+        <PatronCard key={`${memo.timestamp}-${memo.from}`} memo={memo} />
+      ))}
     </>
   );
 }

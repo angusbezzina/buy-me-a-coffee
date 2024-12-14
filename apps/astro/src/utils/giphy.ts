@@ -1,4 +1,5 @@
-import { GIPHY_RANDOM_GIF_URL } from "@/utils/constants";
+import { GIPHY_GIF_BY_ID_URL, GIPHY_RANDOM_GIF_URL } from "@/utils/constants";
+import { getPathWithParams } from "@/utils/routes";
 
 export async function getRandomGif() {
   try {
@@ -10,7 +11,9 @@ export async function getRandomGif() {
 
     const data = await response.json();
 
-    return data;
+    const gif = data.data.images.original.url;
+
+    return gif;
   } catch (error) {
     console.error(error);
     // NOTE: Fail quietly...
@@ -19,15 +22,17 @@ export async function getRandomGif() {
 
 export async function getGifById(id: string) {
   try {
-    const response = await fetch(GIPHY_RANDOM_GIF_URL);
+    const response = await fetch(getPathWithParams(GIPHY_GIF_BY_ID_URL, { id }));
 
     if (!response.ok) {
-      throw new Error("Failed to fetch random GIF");
+      throw new Error("Failed to fetch  GIF");
     }
 
     const data = await response.json();
 
-    return data;
+    const gif = data.data.images.original.url;
+
+    return gif;
   } catch (error) {
     console.error(error);
     // NOTE: Fail quietly...
