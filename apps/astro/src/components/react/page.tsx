@@ -1,7 +1,7 @@
 import { Header } from "@/components/react/header";
+import { LoggedOutPage } from "@/components/react/pages/logged-out";
 import { Providers } from "@/components/react/providers";
 import { OWNER_ADDRESS } from "@/utils/constants";
-import { ConnectButton } from "@rainbow-me/rainbowkit";
 import React from "react";
 import { useAccount } from "wagmi";
 
@@ -14,7 +14,7 @@ function PageImpl({ children }: { children: React.ReactNode | React.ReactNode[] 
   const isOwner = address === OWNER_ADDRESS;
 
   if (!isConnected) {
-    return <ConnectButton />;
+    return <LoggedOutPage title="Welcome!" />;
   }
 
   return (
