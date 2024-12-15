@@ -4,7 +4,7 @@ type LoggedOutPageProps = {
   title: string;
 };
 
-function LoggedOutPage({ title = "Welcome!" }: LoggedOutPageProps) {
+function LoggedOutPage({ title = "Connect to start!" }: LoggedOutPageProps) {
   return (
     <div>
       <div className="w-full md:max-w-3xl min-h-[50vh] flex flex-col gap-4 justify-start items-center px-4">
