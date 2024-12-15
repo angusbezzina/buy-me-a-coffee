@@ -2,6 +2,8 @@
 
 This is a monorepo built around a simple "Buy Me A Coffee" smart contract that is written in Solidity and built with [Hardhat](https://hardhat.org/). The idea here is that this could be used as a starting point for any other future dApps that you're interested in building.
 
+If you're less technical and just want to know how to make your own version of this project, you can find the instructions [here](https://angusbezzina.github.io/buy-me-a-coffee/).
+
 ## Monorepo Structure
 
 ### Apps
