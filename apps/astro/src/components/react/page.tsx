@@ -14,7 +14,7 @@ function PageImpl({ children }: { children: React.ReactNode | React.ReactNode[] 
   const isOwner = address === OWNER_ADDRESS;
 
   if (!isConnected) {
-    return <LoggedOutPage title="Welcome!" />;
+    return <LoggedOutPage title="Thanks for stopping by!" />;
   }
 
   return (
