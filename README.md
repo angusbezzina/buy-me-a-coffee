@@ -1,8 +1,10 @@
 # Buy Me A Coffee
 
-This is a monorepo built around a simple "Buy Me A Coffee" smart contract that is written in Solidity and built with [Hardhat](https://hardhat.org/). The idea here is that this could be used as a starting point for any other future dApps that you're interested in building.
+This is a monorepo built around a simple "Buy Me A Coffee" smart contract that is written in Solidity and built with [Hardhat](https://hardhat.org/). The motivation for this project was to create a simple starting point for a monorepo that uses Web3 components or for any simple dApp that you may want to build.
 
 If you're less technical and just want to know how to make your own version of this project, you can find the instructions [here](https://angusbezzina.github.io/buy-me-a-coffee/).
+
+You can see the project in action [here](https://buy-me-a-coffee-astro.vercel.app).
 
 ## Monorepo Structure
 
@@ -63,3 +65,7 @@ The smart contract is currently set up to be deployed to the Sepolia testnet or 
 ### Astro App
 
 The Astro app is currently configured to be deployed to Vercel. For further instructions on how to deploy the Astro app, please refer to the [astro README](apps/astro/README.md).
+
+## Show support
+
+If you like this project, please consider giving it a star, or shout me a coffee using the link to my "Buy Me A Coffee" page I shared at the top!
