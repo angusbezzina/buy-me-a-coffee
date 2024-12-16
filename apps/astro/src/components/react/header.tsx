@@ -21,8 +21,8 @@ function Header({ isOwner }: HeaderProps) {
   const withdrawPage = pathname === "/withdraw";
 
   return (
-    <header className="z-20 fixed top-0 left-0 w-full flex justify-between items-center px-4 py-3">
-      <a href="/" className="flex items-center gap-2 text-xs">
+    <header className="z-20 bg-background fixed top-0 left-0 w-full flex justify-between items-center px-4 py-3">
+      <a href="/" className="flex items-center gap-2 font-bold">
         <CircleDollarSign />
         Buy me a coffee
       </a>
@@ -39,7 +39,7 @@ function Header({ isOwner }: HeaderProps) {
                 asChild
                 className="cursor-pointer hover:bg-muted-foreground/20 transition-colors"
               >
-                <a href="/">💸 Show some love</a>
+                <a href="/">🙌 Show some support</a>
               </DropdownMenuItem>
             )}
             {!honoursPage && (

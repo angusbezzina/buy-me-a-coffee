@@ -24,6 +24,8 @@
     --destructive-foreground: 210 40% 98%;
     --ring: 215 20.2% 65.1%;
     --radius: 0.5rem;
+    --callout-green: 93, 29%, 69%;
+    --callout-brown: 19, 19%, 23%;
   }
 
   @media (prefers-color-scheme: dark) {
@@ -47,6 +49,8 @@
       --destructive: 0 63% 31%;
       --destructive-foreground: 210 40% 98%;
       --ring: 216 34% 17%;
+      --callout-green: 93, 29%, 69%;
+      --callout-brown: 19, 19%, 23%;
     }
   }
 }

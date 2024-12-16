@@ -1,7 +1,7 @@
 import { GIPHY_GIF_BY_ID_URL, GIPHY_RANDOM_GIF_URL } from "@/utils/constants";
 import { getPathWithParams } from "@/utils/routes";
 
-export async function getRandomGif() {
+export async function getRandomGif(index: number = 0) {
   try {
     const response = await fetch(GIPHY_RANDOM_GIF_URL);
 
@@ -11,7 +11,7 @@ export async function getRandomGif() {
 
     const data = await response.json();
 
-    const gif = data.data.images.original.url;
+    const gif = data.data[index].images.original.url;
 
     return gif;
   } catch (error) {

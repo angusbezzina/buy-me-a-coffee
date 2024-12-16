@@ -20,7 +20,7 @@ function PageImpl({ children }: { children: React.ReactNode | React.ReactNode[] 
   return (
     <>
       <Header isOwner={isOwner} />
-      <div className="relative w-screen h-full min-h-screen mx-auto px-4 flex flex-col justify-center items-center gap-6">
+      <div className="relative w-screen h-full min-h-screen mx-auto py-16 px-4 flex flex-col justify-center items-center gap-6">
         {children}
       </div>
     </>

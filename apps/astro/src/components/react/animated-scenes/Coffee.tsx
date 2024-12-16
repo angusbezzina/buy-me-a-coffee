@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 import { OrbitControls } from "@react-three/drei";
 import { Canvas, extend, useFrame, useLoader } from "@react-three/fiber";
 import React from "react";
@@ -111,9 +112,9 @@ function Coffee() {
 
 export function CoffeeScene({ className }: { className?: string }) {
   return (
-    <div className={className}>
+    <div className={cn(className, "max-w-[100dvw] overflow-hidden")}>
       <Canvas
-        style={{ height: "40dvh" }}
+        style={{ width: "100dvw", height: "40dvh" }}
         camera={{
           position: [8, 15, 28],
           fov: 25,
@@ -121,7 +122,7 @@ export function CoffeeScene({ className }: { className?: string }) {
           far: 100,
         }}
       >
-        <color attach="background" args={["#fefefe"]} />
+        <color attach="background" args={["#ffffff"]} />
         <ambientLight intensity={0.5} />
         <pointLight position={[10, 10, 10]} />
         <Coffee />
